@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.1 on win32)" generated="2024-01-29T15:08:16.919383" rpa="false" schemaversion="5">
+<suite id="s1" name="Nintendo" source="C:\Python_Development_Test\first-script\python_robot\tests\nintendo.robot">
+<test id="s1-t1" name="Search for Legend of Zelda Tears of the Kingdom game" line="16">
+<kw name="Begin Web Test" owner="Common" type="SETUP">
+<kw name="Get Selection From User" owner="Dialogs">
+<msg time="2024-01-29T15:08:21.182007" level="INFO">${New_BROWSER} = Edge</msg>
+<var>${New_BROWSER}</var>
+<arg>Which Browser?</arg>
+<arg>Edge</arg>
+<arg>Chrome</arg>
+<arg>Firefox</arg>
+<doc>Pauses execution and asks user to select a value.</doc>
+<status status="PASS" start="2024-01-29T15:08:17.060894" elapsed="4.121113"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-01-29T15:08:21.182007" level="INFO">${BROWSER} = Edge</msg>
+<arg>${BROWSER}</arg>
+<arg>${New_BROWSER}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-01-29T15:08:21.182007" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-01-29T15:08:21.182007" level="INFO">Opening browser 'Edge' to base url 'about:blank'.</msg>
+<msg time="2024-01-29T15:08:21.759108" level="WARN">The msedgedriver version (120.0.2210.144) detected in PATH at C:\bin\msedgedriver.exe might not be compatible with the detected MicrosoftEdge version (121.0.2277.83); currently, msedgedriver 121.0.2277.83 is recommended for MicrosoftEdge 121.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-01-29T15:08:21.182007" elapsed="1.594777"/>
+</kw>
+<status status="PASS" start="2024-01-29T15:08:17.060894" elapsed="5.715890"/>
+</kw>
+<kw name="Search for Product" owner="NintendoApp">
+<kw name="Go to Webpage" owner="LandingPage">
+<kw name="Load" owner="LandingPage">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-01-29T15:08:22.777790" level="INFO">Opening url 'https://www.nintendo.com'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-01-29T15:08:22.777790" elapsed="2.430080"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-01-29T15:08:25.208869" elapsed="0.187516"/>
+</kw>
+<status status="PASS" start="2024-01-29T15:08:22.777790" elapsed="2.618595"/>
+</kw>
+<kw name="Verify Page Loaded" owner="LandingPage">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>My Nintendo Store</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-01-29T15:08:25.396385" elapsed="0.043697"/>
+</kw>
+<status status="PASS" start="2024-01-29T15:08:25.396385" elapsed="0.043697"/>
+</kw>
+<status status="PASS" start="2024-01-29T15:08:22.776784" elapsed="2.663298"/>
+</kw>
+<kw name="Search Product" owner="LandingPage">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-29T15:08:25.440082" level="INFO">Clicking element 'xpath=//*[@data-name="Magnifying glass"]'.</msg>
+<arg>${icon_Search_MagnifyingLens}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-29T15:08:25.440082" elapsed="0.118988"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-29T15:08:25.560067" level="INFO">Typing text 'The Legend of Zelda™: Tears of the Kingdom' into text field 'name:q'.</msg>
+<arg>${fld_Search}</arg>
+<arg>${Search_Item_#1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-29T15:08:25.560067" elapsed="0.226651"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Top store products</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-01-29T15:08:25.786718" elapsed="0.240752"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${img_LOZ_Banner}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-29T15:08:26.027470" elapsed="0.734186"/>
+</kw>
+<status status="PASS" start="2024-01-29T15:08:25.440082" elapsed="1.321574"/>
+</kw>
+<status status="PASS" start="2024-01-29T15:08:22.776784" elapsed="3.984872"/>
+</kw>
+<kw name="Select Product" owner="NintendoApp">
+<kw name="Select the Game Banner" owner="LandingPage">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-01-29T15:08:26.762655" level="INFO">Clicking link 'xpath=//*[@aria-label="The Legend of Zelda™: Tears of the Kingdom"][@class="ProductTileWidestyles__ContentWrapper-sc-q6g3tu-6 kVhGmd"]'.</msg>
+<arg>${img_LOZ_Banner}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-29T15:08:26.762655" elapsed="0.098308"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${Search_Item_#1}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-01-29T15:08:26.860963" elapsed="1.954305"/>
+</kw>
+<status status="PASS" start="2024-01-29T15:08:26.762655" elapsed="2.052613"/>
+</kw>
+<status status="PASS" start="2024-01-29T15:08:26.761656" elapsed="2.053612"/>
+</kw>
+<kw name="Add &quot;Physical&quot; Copy to Cart" owner="NintendoApp">
+<kw name="Select &quot;Physical&quot; Copy" owner="ProductPage">
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${cbx_Physical}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-01-29T15:08:28.816278" elapsed="1.825999"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-01-29T15:08:30.642277" level="INFO">Clicking button 'id:Physical-radio-2'.</msg>
+<arg>${cbx_Physical}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-29T15:08:30.642277" elapsed="0.435516"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${btn_AddToCart}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-01-29T15:08:31.077793" elapsed="0.756420"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-01-29T15:08:31.835390" level="INFO">Clicking button 'xpath=//*[@class="Buttonstyles__Button-sc-1rgmf3w-2 jDSaOH PurchaseOptionsstyles__WrappingButton-sc-10vf2cu-9 cakehc"]'.</msg>
+<arg>${btn_AddToCart}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-29T15:08:31.834213" elapsed="0.117212"/>
+</kw>
+<status status="PASS" start="2024-01-29T15:08:28.816278" elapsed="3.135147"/>
+</kw>
+<kw name="Validate Game, Price, and QTY" owner="ProductPage">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Added to cart</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-01-29T15:08:31.952428" elapsed="1.711830"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-01-29T15:08:33.699377" level="INFO">Current page contains text 'The Legend of Zelda™: Tears of the Kingdom'.</msg>
+<arg>${Search_Item_#1}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-01-29T15:08:33.664258" elapsed="0.035119"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-01-29T15:08:33.728493" level="INFO">Current page contains text 'Qty: 1'.</msg>
+<arg>Qty: 1</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-01-29T15:08:33.699377" elapsed="0.029116"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-01-29T15:08:33.761197" level="INFO">Current page contains text '$69.99'.</msg>
+<arg>$69.99</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-01-29T15:08:33.729491" elapsed="0.031706"/>
+</kw>
+<status status="PASS" start="2024-01-29T15:08:31.952428" elapsed="1.808769"/>
+</kw>
+<status status="PASS" start="2024-01-29T15:08:28.816278" elapsed="4.944919"/>
+</kw>
+<kw name="View cart and check out" owner="NintendoApp">
+<kw name="Verify Product" owner="CheckoutPage">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-01-29T15:08:33.762194" level="INFO">Clicking link 'xpath=//*[@class="Buttonstyles__Button-sc-1rgmf3w-2 bjubZP AddedToCartstyles__Button-sc-1h53fru-9 dRtwEA"]'.</msg>
+<arg>${btn_ViewCartandCheckout}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-29T15:08:33.762194" elapsed="0.227788"/>
+</kw>
+<status status="PASS" start="2024-01-29T15:08:33.762194" elapsed="0.227788"/>
+</kw>
+<status status="PASS" start="2024-01-29T15:08:33.762194" elapsed="0.227788"/>
+</kw>
+<kw name="Validate Product is on Checkout" owner="NintendoApp">
+<kw name="Verify the Product is in the Cart" owner="CheckoutPage">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Shopping cart</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-01-29T15:08:33.990982" elapsed="0.029537"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-01-29T15:08:34.041109" level="INFO">Current page contains text 'The Legend of Zelda™: Tears of the Kingdom'.</msg>
+<arg>${Search_Item_#1}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-01-29T15:08:34.020519" elapsed="0.020590"/>
+</kw>
+<status status="PASS" start="2024-01-29T15:08:33.990982" elapsed="0.050127"/>
+</kw>
+<status status="PASS" start="2024-01-29T15:08:33.989982" elapsed="0.051127"/>
+</kw>
+<kw name="End Web Test" owner="Common" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-01-29T15:08:34.042109" elapsed="2.165868"/>
+</kw>
+<status status="PASS" start="2024-01-29T15:08:34.042109" elapsed="2.165868"/>
+</kw>
+<doc>This is where any documentation is added about THIS test!</doc>
+<tag>2127</tag>
+<tag>Regression</tag>
+<tag>Search</tag>
+<status status="PASS" start="2024-01-29T15:08:17.059896" elapsed="19.148081"/>
+</test>
+<doc>This is where any documentation is added about the WHOLE test!</doc>
+<status status="PASS" start="2024-01-29T15:08:16.920383" elapsed="19.288594"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">2127</stat>
+<stat pass="1" fail="0" skip="0">Regression</stat>
+<stat pass="1" fail="0" skip="0">Search</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Nintendo">Nintendo</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-01-29T15:08:21.759108" level="WARN">The msedgedriver version (120.0.2210.144) detected in PATH at C:\bin\msedgedriver.exe might not be compatible with the detected MicrosoftEdge version (121.0.2277.83); currently, msedgedriver 121.0.2277.83 is recommended for MicrosoftEdge 121.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>
